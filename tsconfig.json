@@ -4,6 +4,7 @@
         "target": "esnext",
         "sourceMap": true,
         "outDir": "lib",
-        "strict": true
+        "strict": true,
+        "declaration": true
     }
 }

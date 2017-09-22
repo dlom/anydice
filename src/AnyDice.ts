@@ -5,7 +5,7 @@ import { random } from "./Util";
 
 export type AnyDiceDistribution = [number, number][];
 
-interface AnyDiceDistributions {
+export interface AnyDiceDistributions {
     data: AnyDiceDistribution[],
     labels: string[],
     minX: number,
