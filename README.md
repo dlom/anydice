@@ -1,6 +1,8 @@
 anydice.js
 ==========
 
+[![npm](https://img.shields.io/npm/v/anydice.svg)](https://www.npmjs.com/package/anydice)
+
 ## API
 
 ```javascript
