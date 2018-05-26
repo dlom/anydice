@@ -1,6 +1,6 @@
 {
   "name": "anydice",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "anydice roller",
   "main": "lib/AnyDice.js",
   "types": "lib/AnyDice.d.ts",
