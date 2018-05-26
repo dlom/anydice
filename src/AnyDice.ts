@@ -33,7 +33,7 @@ const anyDiceRequest = (program: string, endpoint: string): Promise<any> => {
     return promise;
 }
 
-export class AnyDice {
+class AnyDice {
     private results: Map<string, AnyDiceDistribution>;
 
     private constructor(private expression: string, private link: string, distributions: AnyDiceDistributions) {
@@ -130,4 +130,22 @@ export class AnyDice {
             throw new Error("Bad response from AnyDice");
         }
     }
+
+    public static async roll(expression: string): Promise<number> {
+        const anydice = await AnyDice.run(expression, true);
+        return anydice.roll(anydice.default(), 1)[0];
+    }
 }
+
+const run: {
+    (expression: string): Promise<AnyDice>;
+    (expression: string, pretty: boolean): Promise<AnyDice>;
+} = (expression: string, pretty?: boolean): Promise<AnyDice> => {
+    return AnyDice.run(expression, pretty!);
+};
+
+const roll = (expression: string): Promise<number> => {
+    return AnyDice.roll(expression);
+};
+
+export { AnyDice, run, roll };
