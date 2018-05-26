@@ -20,7 +20,7 @@ export interface AnyDiceResponse {
 }
 
 const anyDiceRequest = (program: string, endpoint: string): Promise<any> => {
-    const api = "http://anydice.com";
+    const api = "https://anydice.com";
     const promise = new Promise<any>((resolve, reject) => {
         request.post(`${api}${endpoint}`, {
             form: { program },
